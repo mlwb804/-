@@ -1,0 +1,231 @@
+@mixin pad {
+    @media screen and (max-width:1130px) {
+        @content
+    }    
+};
+@mixin mobile {
+    @media screen and (max-width:450px) {
+        @content
+    }
+};
+
+
+*{
+    padding: 0;
+    margin: 0;box-sizing: border-box;
+    font-family: 'Noto Sans TC',
+    sans-serif;
+}
+body{
+    position: relative;
+    background-color: #ddd;
+}
+.orange{
+    position: absolute;
+    top: -10vh;
+    right: 0;
+    z-index: -1;
+    width: 55vw;
+    height: 150vh;
+
+    @include pad{
+        opacity: .5;
+    }
+}
+.active{
+    color:#e08958;
+}
+header {
+    nav{
+        background-color: #eee;
+        width: 100%;
+        ul{
+            width: 70%;
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+            padding: 2rem;
+
+            @include pad {
+                flex-direction: column;
+                width: 100%;
+            }
+            li{
+                font-size: 1.75rem;
+                @include pad {
+                    padding: 1rem 0;
+                    border-bottom: 2px solid #ccc;
+                }
+                a{
+                    color: #000;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+
+    .left{
+        flex: 2 1 500px;
+        padding: 2rem;
+        h1{
+            font-size: 4rem;
+            color:#e08958;
+        }
+        p{
+            font-size: 1.5rem;
+            padding: 1rem 0;
+        }
+    }
+    .right{
+        flex: 1 1 600px;
+        position: relative;
+        @include pad{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1rem ;
+        }
+        img{
+            border-radius: 50%;
+            width: 20vw;
+            height: 20vw;
+            position: absolute;
+            top: 45vh;
+            right: 25vw;
+            transform: translateY(-50%);
+
+            @include pad{
+                position: static;
+                transform: none;
+                width: 25vw;
+                height: 25vw;
+            }
+            @include mobile {
+                width: 40vw;
+                height: 40vw;
+            }
+        }
+    }
+    section.table{
+        flex: 3 1 500px;
+        padding: 1rem;
+        table{
+            border-collapse: collapse;
+                tr {
+                    border-bottom: 2px solid #ccc;
+                    transition: all .2s;
+                    &:hover{
+                        background-color: #ffd2b8;
+                    }
+                    td {
+                        padding: 2rem;
+                    }
+                }
+        }
+    }
+    .picture{
+        flex: 1 1 600px;
+        position: relative;
+         @include pad {
+             display: flex;
+             justify-content: center;
+             align-items: center;
+         }
+        img{
+            width: 25vw;
+            height: 60vh;
+            position: absolute;
+            top: 50px;
+            left: 100px;
+             @include pad {
+                 width: 40vw;
+                 display: none;
+             }
+        }
+        .orangeRect{
+            width: 25vw;
+            height: 60vh;
+            background-color: #e08958;
+            position: absolute;
+            top: 70px;
+            left: 130px;
+            z-index: -1;
+
+            @include pad {
+                display: none;
+            }
+        }
+    }
+    section.form{
+        flex: 1 1 600px;
+        form{
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 1.5rem;
+            div{
+                margin: .5rem;
+                label{
+                    font-size: 1.5rem;
+                    margin-right: 1rem;
+                }
+            }
+            input,
+            textarea{
+                background-color: #ffaa79;
+                opacity: .8;
+                color:#fff;
+                font-size: 1.25rem;
+                padding: 0.5rem .25rem;
+                border: none;
+                width: 80%;
+            }
+            textarea{
+                vertical-align: top;
+            }
+            button {
+                align-self: center;
+                background-color: #e08958;
+                color:#fff;
+                border: none;
+                cursor: pointer;
+                padding: .75rem 1.5rem;
+                font-size: 2rem;
+                border-radius: 10px;
+            }
+        }
+    }
+    div.line{
+        background-color: #aaa;
+        width: 3px;
+    }
+    section.contact {
+        flex: 1 1 500px;
+        display: flex;
+        align-items: center;
+        padding: 2rem;
+        .content{
+            h2{
+                margin: 1rem 0;
+            }
+        }
+    }
+}
+
+footer{
+    div{
+        @include pad{
+            display: flex;
+            justify-content: center;
+        }
+    a{
+        padding: 1rem;
+    }
+    }
+}
+

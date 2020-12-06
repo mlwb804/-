@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+header{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 10vh;
+    padding:0.5em 1.5em;
+}
+header .logo{
+    display: flex;
+    align-items: center;
+    flex-grow: 6;
+}
+header .logo img{
+    width: 5vw;
+    height: 5vw;
+
+}
+
+header nav {
+    flex-grow: 4;
+    margin-right: 3rem;
+    flex-basis: 450px;
+}
+header nav ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav a{
+    text-decoration: none;
+    color:#21C1D7;
+    font-size: 1.35rem;
+}
+nav ul li a img{
+    width: 2rem;
+    height: 2rem;
+}
+section.imageSection {
+    background: url(../練習/1/pexels-photo-416676.jpeg);
+    min-height: 90vh;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section.imageSection .blackFront {
+    background-color: rgba(57, 55, 55, 0.4);
+    height: 90vh;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: -1;
+
+}
+section.imageSection h2{
+    color:white;
+    font-size: 3.5rem;
+    text-align: center;
+    font-weight: normal;
+    margin: 3rem;
+}
+section.imageSection a{
+    color:white;
+    padding: 2rem 3rem;
+    background-color: #20c4c8;
+    font-size: 2.5rem;
+    text-decoration: none;
+    border-radius: 1rem;
+}
+
+
+.secondPart {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 4rem;
+    min-height: 100vh;
+}
+.secondPart h3{
+    font-weight: normal;
+    font-size: 3.25rem;
+}
+.secondPart .cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+.secondPart .cards .card{
+    flex-grow: 1;
+    margin: 3rem;
+    width: 33.33%;
+    display: flex;
+    height: 30rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-basis: 20rem;
+}
+.secondPart .cards .card h5{
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1150px) {
+    section.thirdPart {
+        flex-direction: column;
+    }
+
+    section.thirdPart div.left div.intro h1 {
+        font-size: 1.5rem;
+    }
+
+    section.thirdPart div.left div.intro p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 876px){
+    header nav{
+        margin-right: 0rem;
+        display: flex;
+    }
+    nav ul {
+        justify-content: center;
+    }
+    header .logo{
+        justify-content: center;
+    }
+    header .logo img{
+        width: 15vw;
+        height: 15vw;
+    }
+    nav li{
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    header nav ul {
+        flex-direction: column;
+    }
+    section.imagesSection h2 {
+        font-size: 2rem;
+    }
+    section.secondPart h3 {
+        font-size: 1.75rem;
+    }
+    .secondPart .cards .card{
+        margin: 0;
+    }
+}
